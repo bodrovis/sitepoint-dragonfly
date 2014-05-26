@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div id="errors_full_text" class="bg-warning">
+    <h2>Found these errors when saving:</h2>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
