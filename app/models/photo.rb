@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id         :integer          not null, primary key
+#  image_uid  :string(255)
+#  title      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  image_size :integer
+#
+
 class Photo < ActiveRecord::Base
   dragonfly_accessor :image do
     after_assign { |img| img.encode!('jpg', '-quality 80') }

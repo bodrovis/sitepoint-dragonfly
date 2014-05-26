@@ -25,7 +25,7 @@ Dragonfly.app.configure do
   # Override the .url method...
   define_url do |app, job, opts|
     thumb = Thumb.find_by_job(job.signature)
-    # If (fetch 'some_uid' then resize to '40x40') has been stored already, give the datastore's remote url ...
+    # If (fetch 'some_uid' then resize to '180x180') has been stored already, give the datastore's remote url ...
     if thumb
       app.datastore.url_for(thumb.uid, :scheme => 'https')
       # ...otherwise give the local Dragonfly server url
@@ -43,7 +43,7 @@ Dragonfly.app.configure do
     Thumb.create!(
         :uid => uid,
         :job => job.signature   # 'BAhbBls...' - holds all the job info
-    )                           # e.g. fetch 'some_uid' then resize to '40x40'
+    )                           # e.g. fetch 'some_uid' then resize to '180x180'
   end
 end
 
