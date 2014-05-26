@@ -9,15 +9,17 @@ Dragonfly.app.configure do
 
   url_format "/media/:job/:name"
 
-  # datastore :file,
-  #   root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-  #   server_root: Rails.root.join('public')
-
-  datastore :s3,
-            bucket_name: 'bodrov_sitepoint',
-            access_key_id: 'AKIAJDMUKFSJNODLJ52Q',
-            secret_access_key: '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',
-            url_scheme: 'https'
+  if Rails.env.development? || Rails.env.test?
+    datastore :file,
+              root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+              server_root: Rails.root.join('public')
+  else
+    datastore :s3,
+              bucket_name: 'bodrov_sitepoint',
+              access_key_id: ENV['AWS_KEY'],
+              secret_access_key: ENV['AWS_SEC'],
+              url_scheme: 'https'
+  end
 end
 
 # Logger

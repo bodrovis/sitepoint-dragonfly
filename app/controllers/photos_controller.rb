@@ -8,19 +8,18 @@ class PhotosController < ApplicationController
   end
 
   def create
-    render text: params
-    # @photo = Photo.new(photo_params)
-    # if @photo.save
-    #   flash[:success] = "Photo saved!"
-    #   redirect_to photos_path
-    # else
-    #   render 'new'
-    # end
+    @photo = Photo.new(photo_params)
+    if @photo.save
+      flash[:success] = "Photo saved!"
+      redirect_to photos_path
+    else
+      render 'new'
+    end
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:image, :title, :retained_image, :remove_image)
+    params.require(:photo).permit(:image, :title)
   end
 end
