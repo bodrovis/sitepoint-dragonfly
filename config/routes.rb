@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos
+  resources :photos, only: [:new, :create, :index]
 
   root to: 'photos#index'
   # The priority is based upon order of creation: first created -> highest priority.
