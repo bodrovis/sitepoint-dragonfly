@@ -19,7 +19,7 @@ class Photo < ActiveRecord::Base
 
   validates :title, presence: true, length: {minimum: 2, maximum: 20}
 
-  validates :image, presence: true
+  #validates :image, presence: true
   validates_size_of :image, maximum: 500.kilobytes,
                     message: "should be no more than 500 KB", if: :image_changed?
 
