@@ -196,12 +196,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
-    simple_dragonfly_preview (0.0.5)
-      dragonfly (~> 1.0.0)
-      rails (~> 4.0)
-    simple_form (3.1.0)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -242,8 +236,6 @@ DEPENDENCIES
   rails (= 4.1.9)
   rails_12factor
   sass-rails (~> 5.0.0)
-  simple_dragonfly_preview
-  simple_form
   sqlite3
   turbolinks
   tzinfo-data

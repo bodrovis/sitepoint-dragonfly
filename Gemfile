@@ -14,8 +14,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
-gem 'simple_form'
-gem 'simple_dragonfly_preview'
 gem 'bootstrap-sass'
 gem 'rack-cache', :require => 'rack/cache'
 group :production do
