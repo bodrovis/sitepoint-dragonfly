@@ -18,7 +18,7 @@ Dragonfly.app.configure do
     datastore :s3,
               bucket_name: 'bodrov_sitepoint',
               access_key_id: ENV['AWS_KEY'],
-              secret_access_key: ENV['AWS_SEC'],
+              secret_access_key: ENV['AWS_SECRET'],
               url_scheme: 'https'
   end
 
